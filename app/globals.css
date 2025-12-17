@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827;
 }
 
 @theme inline {
@@ -14,13 +14,74 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #111827;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Improved text readability */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1f2937;
+}
+
+p, li, td, th {
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Better contrast for specific elements */
+.text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+/* Enhanced table readability */
+table {
+  font-size: 15px;
+}
+
+table th {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+table td {
+  color: #374151;
+}
+
+/* Code blocks with better contrast */
+pre, code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Force light mode for better readability */
+* {
+  color-scheme: light;
+}
+
+/* Override any dark mode styles */
+html[data-theme="dark"] {
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: light;
+  }
 }

@@ -1,14 +1,16 @@
 'use client'
 
 interface ErrorProps {
-    error: Error
+    error: Error & {digest?: string}
+    reset: ()=> void
 }
 
-const Error = (error: ErrorProps) => {
+const Error = ({error, reset}: ErrorProps) => {
 
     return (
         <div>
-            {'Error happened'}
+            <h2>Somethign went wrong!</h2>
+            <button onClick={reset}>Try again</button>
         </div>
     )
 }
